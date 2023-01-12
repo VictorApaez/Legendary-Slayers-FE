@@ -17,14 +17,10 @@ function Map() {
           </p>
           <div className="buttons-tag">
             <Link to="/signIn">
-              <button className="button-one" onClick={"/"}>
-                Get Started
-              </button>
+              <button className="button-one">Get Started</button>
             </Link>
             <Link to="/signIn">
-              <button className="button-two" onClick={"/"}>
-               Play For Free
-              </button>
+              <button className="button-two">Play For Free</button>
             </Link>
           </div>
         </div>

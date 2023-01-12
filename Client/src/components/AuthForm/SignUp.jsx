@@ -1,14 +1,11 @@
 import React from "react";
 import "./SignUp.css";
-import { useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import jwtDecode from "jwt-decode";
 
 //npm i jwt-decode
 function SignUp(props) {
-  const passwordRef = useRef(null);
-  const usernameRef = useRef(null);
   const navigate = useNavigate();
 
   const [username, setUsername] = useState("");

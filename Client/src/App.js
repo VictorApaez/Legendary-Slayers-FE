@@ -1,6 +1,5 @@
-import logo from "./logo.svg";
 import "./App.css";
-import { Routes, Route, useFetcher } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./components/Home/Home";
 import Characters from "./components/Characters/Characters";
@@ -9,30 +8,10 @@ import Items from "./components/Items/Items";
 import SignIn from "./components/AuthForm/SignIn";
 import SignUp from "./components/AuthForm/SignUp";
 import UserProfile from "./components/User/UserProfile";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 function App() {
   const [user, setUser] = useState(null);
-
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    if (token) {
-      fetch(
-        "https://legendary-slayers-be-production.up.railway.app/users/verify",
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      )
-        .then((res) => res.json())
-        .then((res) => {
-          console.log(res);
-          setUser(res);
-        });
-    }
-  }, []);
-  console.log(user);
   return (
     <div className="App">
       <Navbar user={user} setUser={setUser} />

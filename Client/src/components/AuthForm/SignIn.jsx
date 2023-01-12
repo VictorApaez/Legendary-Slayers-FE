@@ -1,5 +1,4 @@
 import React from "react";
-import { useRef } from "react";
 import "./SignIn.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
@@ -31,7 +30,6 @@ function SignIn(props) {
       .then((res) => {
         localStorage.setItem("token", res.token);
         const user = jwtDecode(res.token);
-        console.log(props);
         props.setUser(user);
         navigate("/userProfile");
       })

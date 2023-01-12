@@ -1,8 +1,7 @@
 import React from "react";
 import "./Home.css";
 import Footer from "../Footer/Footer";
-import Map from "../Map/Map"
-
+import Map from "../Map/Map";
 
 function Home() {
   return (
@@ -22,24 +21,24 @@ function Home() {
         <div className="homeFrontVidWrap">
           <div className="homeFrontVid">
             <video
-                    id="frontVid"
-                    autoPlay
-                    loop
-                    muted
-                    // width="100%"
-                    // height="100%"
-                    src="https://www.leagueoflegends.com/static/hero-0632cbf2872c5cc0dffa93d2ae8a29e8.webm"
-                    type="video/mp4"
-                    ></video>
+              id="frontVid"
+              autoPlay
+              loop
+              muted
+              // width="100%"
+              // height="100%"
+              src="https://www.leagueoflegends.com/static/hero-0632cbf2872c5cc0dffa93d2ae8a29e8.webm"
+              type="video/mp4"
+            ></video>
           </div>
           <div className="homeFrontVidFrame">
-          <div className="homeFrontLogo"></div>
+            <div className="homeFrontLogo"></div>
           </div>
         </div>
         <div className="homeSectionABottom"></div>
       </div>
-      <Map />
-      <Footer/>
+      {/* <Map /> */}
+      <Footer />
     </div>
   );
 }
