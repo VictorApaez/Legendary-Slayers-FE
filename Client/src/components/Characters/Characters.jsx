@@ -10,6 +10,7 @@ function Characters() {
   const [searchName, setSearchName] = useState("");
   const [champClass, setChampClass] = useState("");
   const [classID, setClassID] = useState("");
+  const [isLoading, setIsLoading] = useState(true);
 
   const handleChampSearch = (e) => {
     e.preventDefault();
@@ -28,14 +29,21 @@ function Characters() {
   };
 
   let fetchData = () => {
+    setIsLoading(true);
     fetch(
       "https://legendary-slayers-be-production.up.railway.app/champions/all"
     )
       .then((res) => res.json())
       .then((data) => {
         setCharsData(data);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+        setIsLoading(false);
       });
   };
+
   useEffect(() => {
     fetchData();
     handleClick();
@@ -136,19 +144,33 @@ function Characters() {
           </form>
         </div>
         <div className="characters-container">
-          {charsData.map(
-            (char, i) =>
-              char.name.toLowerCase().includes(searchName.toLowerCase()) &&
-              char.tags.join().toLowerCase().includes(champClass) && (
-                <Link to={`/champions/${char.name}`} key={i}>
-                  <div className="character-card">
-                    <img src={`${char.image_loading}`} alt=""></img>
-                    <div className="champ-name">
-                      <h4>{char.name}</h4>
+          {isLoading ? (
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                height: "100px",
+                fontSize: "20px",
+              }}
+            >
+              Loading...
+            </div>
+          ) : (
+            charsData.map(
+              (char, i) =>
+                char.name.toLowerCase().includes(searchName.toLowerCase()) &&
+                char.tags.join().toLowerCase().includes(champClass) && (
+                  <Link to={`/champions/${char.name}`} key={i}>
+                    <div className="character-card">
+                      <img src={`${char.image_loading}`} alt=""></img>
+                      <div className="champ-name">
+                        <h4>{char.name}</h4>
+                      </div>
                     </div>
-                  </div>
-                </Link>
-              )
+                  </Link>
+                )
+            )
           )}
         </div>
       </div>

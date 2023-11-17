@@ -46,7 +46,7 @@
   width: 100%;
   height: fit-content;
   overflow: hidden;
-  height: calc(60vh + 60px);
+  height: 100vh;
   justify-content: center;
   align-items: center;
 }
@@ -69,14 +69,6 @@
   width: 100vw;
   height: 50vh;
   overflow: hidden;
-  background-image: linear-gradient(
-    180deg,
-    #ffffff 0%,
-    #ffffff 95%,
-    #000000 100%
-  );
-  /* background-color: white; */
-  /* z-index: 2; */
 }
 .homeFrontVidWrap {
   display: flex;
@@ -84,7 +76,7 @@
   align-items: center;
   position: absolute;
   top: 5vh;
-  height: 60vh;
+  height: 75vh;
   width: 85vw;
   z-index: 2;
 }
