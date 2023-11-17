@@ -5,7 +5,7 @@ A interactive website that allows users to search for information about league c
 # Live Site
 - Backend repo: https://github.com/dmpellegrini/Legendary-Slayers-BE
 - Backend deployed: https://legendary-slayers-be-production.up.railway.app/
-- Frontend: https://legendsofleague.netlify.app/
+- Frontend: legendary-slayers-fe.vercel.app
 
 # Pages
 ![Home Page](assets/HomePage.png)
